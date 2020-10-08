@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <input id="x" type="numer" placeholder="Podaj liczbe numer 1">
+   <input id="y" type="numer"placeholder ="Podaj liczbe numer 2"> <br>
+<div id="options">
+    +<input type="radio" id="dodaj" name="dzialanie" value="dodawanie"> <br>
+    -<input type="radio" id="odejmij" name="dzialanie" value="odejmowanie"> <br>
+    *<input type="radio" id="mnozenie" name="dzialanie" value="mnozenie"> <br>
+    /<input type="radio" id="dzielenie" name="dzialanie" value="dzielenie"> <br>
+
+    <button onclick="Oblicz()">Oblicz</button>
+    <p id="z"></p>
+</div>
+    <script>
+        function Oblicz(){
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+            x = parseInt(x);
+            y = parseInt(y);
+
+            var dzialanie = document.getElementsByName('option').value;
+            
+            if(document.getElementById('dodaj').checked){
+                var z = x + y;
+                console.log(z);
+                document.getElementById('z').innerHTML = z;
+            }else if(document.getElementById('odejmij').checked){
+                var z = x - y;
+                console.log(z);
+                document.getElementById('z').innerHTML = z;
+            }else if(document.getElementById('mnozenie').checked){
+                var z = x * y;
+                console.log(z);
+                document.getElementById('z').innerHTML = z;
+            }else if(document.getElementById('dzielenie').checked){
+                var z = x / y;
+                console.log(z);
+                document.getElementById('z').innerHTML = z;
+            }
+        }
+    </script>
+</body>
+</html>
